@@ -143,6 +143,25 @@ localhost:8080/home
 ```
 maka tampilannya akan seperti dibawah ini :
 
+![image](https://github.com/Meilyaatffh/Tugas1_PBF_Meilya/assets/134565192/02b6b0f1-f6f8-4185-b4ca-c4bd0a585599)
+
+
+### 7. Membuat Database
+
+Membuat database dengan nama ci4tutorial
+kemudian kita membuat tabel news, perintahnya sebagai berikut :
+```
+CREATE TABLE news (
+    id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+    title VARCHAR(128) NOT NULL,
+    slug VARCHAR(128) NOT NULL,
+    body TEXT NOT NULL,
+    PRIMARY KEY (id),
+    UNIQUE slug (slug)
+);
+```
+
+isikan tabel news dengan data sebagai berikut :
 
 
 
