@@ -1,5 +1,5 @@
 #### Tugas1_PBF_Meilya
-# CODEIGNINER
+# CODEIGNITER
 ***
 
 <details>
@@ -80,9 +80,68 @@ berikut adalah struktur direktori bawaan dari codeigniter :
 
 ### 2. Mengatur Mode Pengembangan
 Secara default, CodeIgniter dijalankan dalam mode produksi. Ini adalah fitur keamanan untuk menjaga situs menjadi lebih aman. disini kita akan melakukan perubahan yang awalnya mode produksi menjadi mode development, yaitu dengan cara Salin atau ganti nama file env menjadi .env
-Batalkan komentar (hapus simbol #) pada baris dengan CI_ENVIRONMENTdi atasnya, dan ubah productionmenjadi development:
+Batalkan komentar pada baris yang semulanya produksi dan ubah menjadi :
 
+```
+CI_ENVIRONMENT = development
+```
 
+### 3. Membuat Controller
+Buat file di app/Controllers/Pages.php dengan kode berikut :
+
+```
+<?php
+
+namespace App\Controllers;
+
+class Pages extends BaseController
+{
+    public function index()
+    {
+        return view('welcome_message');
+    }
+
+    public function view($page = 'home')
+    {
+        // ...
+    }
+```
+
+kita telah membuat kelas dengan nama Pages dan method index() dalam kelas Pages yang akan dipanggil ketika pengguna mengakses URL utama dari aplikasi. Method ini kemudian memanggil view bernama 'welcome_message'. Kemudian method view() method ini menerima satu parameter opsional $page yang jika tidak disediakan akan dianggap sebagai 'home'. dan juga 
+
+### 4. Membuat Tampilan
+Selanjutnya adalah membuat tampilan untuk header dan footer
+Header berisi kode HTML dasar yang ingin ditampilkan sebelum memuat tampilan utama, bersama dengan judul. Ini juga akan menampilkan $titlevariabel, yang akan kita definisikan nanti di controller.
+Untuk membuat header di app/Views/templates/header.php dan tambahkan kode berikut:
+```
+<!doctype html>
+<html>
+<head>
+    <title>CodeIgniter Tutorial</title>
+</head>
+<body>
+
+    <h1><?= esc($title) ?></h1>
+```
+
+untuk membuat footer di app/Views/templates/footer.php dengan menggunakan kode berikut :
+```
+<em>&copy; 2022</em>
+</body>
+</html>
+```
+
+### 5. Menambahkan Logika ke Controller
+
+Pada direktori app/Views/pages buat 2 file dengan nama home.php dan about.php
+kemudian ketikkan teks sesuai dengan yang anda inginkan
+
+### 6. Menjalankan Aplikasi
+untuk mengakses buka browser kemudian ketikkan :
+```
+localhost:8080/home
+```
+maka tampilannya akan seperti dibawah ini :
 
 
 
