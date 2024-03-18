@@ -64,6 +64,13 @@ ketikkan perintah cd BelajarCI4 untuk masuk ke dalam folder yang telah kita buat
 Selanjutnya, buka browser dan ketikkan akses localhost:8080. Halaman awal CodeIgniter akan tampil seperti gambar di bawah ini :
 ![image](https://github.com/Meilyaatffh/Meilyaatffh/assets/134565192/fa733798-789f-4982-a89f-101626b240e5)
 
+</details>
+
+<details>
+<summary> MEMBUAT APLIKASI </summary>
+Sebelumnya kita sudah menginstall codeigniter pada komputer kita. Langkah selanjutnya adalah buka folder yang sudah kita buat di visual studio code. Ada banyak sekali struktur direktori yang sudah disediakan oleh codeigniter. setiap folder dan file memiliki tujuan dan fungsinya masing masing.
+Misalnya, folder "app" digunakan untuk menyimpan semua file yang terkait dengan aplikasi yang sedang kita buat. kemudian ada folder "public" yang digunakan untuk menyimpan asset yang akan dibuat dan File "public/index.php" adalah file yang akan dijalankan pertama kali ketika aplikasi diakses oleh pengguna. Folder "test" digunakan jika aplikasi akan menjalankan testing. kemudian ada folder vendor yaitu tempat menyimpan dependency dari aplikasi. yang terakhir ada folder writeable dimana codeigniter akan mengisikan secara otomatis (tidak untuk melakukan modifikasi).
+
 
 
 
