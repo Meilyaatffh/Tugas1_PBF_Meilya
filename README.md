@@ -169,7 +169,137 @@ isikan tabel news dengan data sebagai berikut :
 ### 8. Menghubungkan ke Basis Data
 
 pada file .env untuk bagian database tidak diberi komentar kemudian ubah datanya menyesuaikan dengan yang ada di database. disini saya melakukan perubahan pada nama database yaitu menjadi ci4tutorial, karena kita menggunakan database ci4tutorial.
+Pastikan telah mengkonfigurasi database dengan benar seperti yang dijelaskan dalam Konfigurasi Database
+
+![image](https://github.com/Meilyaatffh/Tugas1_PBF_Meilya/assets/134565192/5c3b297d-3eb2-4133-bc49-1d08804f8dc1)
+
+### 9. Menyiapkan Model
+
+* Membuat Model Berita
+  untuk membuat model berita di app/Models kemudian buat file dengan nama NewsModel.php, berikut adalah kodenya :
+  ```
+  <?php
+  namespace App\Models;
+
+  use CodeIgniter\Model;
+
+  class NewsModel extends Model
+  {
+    protected $table = 'news';
+  }
+  ```
+  
+### 10. Menambahkan Metode NewsModel::getNews()
+
+tambahkan kode berikut ke NewsModel :
+
+```
+ public function getNews($slug = false)
+    {
+        if ($slug === false) {
+            return $this->findAll();
+        }
+
+        return $this->where(['slug' => $slug])->first();
+    }
+```
+
+Dengan kode ini, kita dapat melakukan dua kueri berbeda. Kita bisa mendapatkan semua catatan berita, atau mendapatkan item berita melalui slug. Dan  mungkin memperhatikan bahwa $slugvariabel tidak di-escape sebelum menjalankan kueri
+
+### 11. Menampilkan Berita
+
+Model harus dikaitkan dengan tampilan yang akan menampilkan item berita kepada pengguna.
 
 
+### 12. Menambahkan Aturan Routes
+
+Ubah file app/Config/Routes.php menjadi seperti dibawah ini :
+
+```
+<?php
+
+// ...
+
+use App\Controllers\News; // Add this line
+use App\Controllers\Pages;
+
+$routes->get('news', [News::class, 'index']);           // Add this line
+$routes->get('news/(:segment)', [News::class, 'show']); // Add this line
+
+$routes->get('pages', [Pages::class, 'index']);
+$routes->get('(:segment)', [Pages::class, 'view']);
+```
+
+### 13. Membuat Controller Berita
+
+Membuat Controller baru di app/Controllers/News.php
+
+```
+<?php
+
+namespace App\Controllers;
+
+use App\Models\NewsModel;
+
+class News extends BaseController
+{
+    public function index()
+    {
+        $model = model(NewsModel::class);
+
+        $data['news'] = $model->getNews();
+    }
+
+    public function show($slug = null)
+    {
+        $model = model(NewsModel::class);
+
+        $data['news'] = $model->getNews($slug);
+    }
+}
+```
+
+Berikutnya, ada dua metode, satu untuk melihat semua item berita, dan satu lagi untuk item berita tertentu.
+
+Selanjutnya, model()fungsi tersebut digunakan untuk membuat NewsModelinstance. Ini adalah fungsi pembantu.
 
 
+### 14. Berita Lengkap::index()
+
+```
+<?php
+
+namespace App\Controllers;
+
+use App\Models\NewsModel;
+
+class News extends BaseController
+{
+    public function index()
+    {
+        $model = model(NewsModel::class);
+
+        $data = [
+            'news'  => $model->getNews(),
+            'title' => 'News archive',
+        ];
+
+        return view('templates/header', $data)
+            . view('news/index')
+            . view('templates/footer');
+    }
+
+    // ...
+}
+```
+
+### 15. Membuat Berita / Lihat File
+
+ketikkan  perintah berikut ini :
+
+```
+<h2><?= esc($news['title']) ?></h2>
+<p><?= esc($news['body']) ?></p>
+```
+
+kemudian masuk ke browser dan  Anda ke halaman “berita”, yaitu localhost:8080/news,  Anda akan melihat daftar item berita, yang masing-masing memiliki link untuk menampilkan satu artikel saja.
