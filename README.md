@@ -3,6 +3,8 @@
 ***
 <details>
 <summary> PENGENALAN DASAR CODEIGNITER </summary>
+
+  
 ### Definisi CodeIgniter
 CodeIgniter merupakan salah satu framework yang populer di dunia pengembangan aplikasi dan web dengan menggunakan konsep Model-View-Controller (MVC). Sebagai platform open-source, CodeIgniter menjadi pilihan utama bagi para pengembang yang bekerja dengan bahasa pemrograman PHP. Penggunaan CodeIgniter bertujuan untuk mempercepat dan menyederhanakan proses pengembangan proyek. CodeIgniter mengadopsi model MVC, suatu pendekatan yang sangat cocok untuk merancang aplikasi atau website yang bersifat dinamis. Konsep MVC digunakan untuk memisahkan komponen utama ke dalam beberapa bagian, membentuk pola yang efektif saat proses pengembangan aplikasi. 
 ### Fitur Fitur CodeIgniter
