@@ -9,6 +9,7 @@
 CodeIgniter merupakan salah satu framework yang populer di dunia pengembangan aplikasi dan web dengan menggunakan konsep Model-View-Controller (MVC). Sebagai platform open-source, CodeIgniter menjadi pilihan utama bagi para pengembang yang bekerja dengan bahasa pemrograman PHP. Penggunaan CodeIgniter bertujuan untuk mempercepat dan menyederhanakan proses pengembangan proyek. CodeIgniter mengadopsi model MVC, suatu pendekatan yang sangat cocok untuk merancang aplikasi atau website yang bersifat dinamis. Konsep MVC digunakan untuk memisahkan komponen utama ke dalam beberapa bagian, membentuk pola yang efektif saat proses pengembangan aplikasi. 
 
 
+
 ### Fitur Fitur CodeIgniter
 * #### Model-View-Controller
   Model View Controller atau yang dapat disingkat MVC adalah sebuah pola arsitektur dalam membuat sebuah aplikasi dengan cara memisahkan kode menjadi tiga bagian yang terdiri dari:
@@ -68,8 +69,21 @@ Selanjutnya, buka browser dan ketikkan akses localhost:8080. Halaman awal CodeIg
 
 <details>
 <summary> MEMBUAT APLIKASI </summary>
+  
+### 1. Struktur Aplikasi
+  
 Sebelumnya kita sudah menginstall codeigniter pada komputer kita. Langkah selanjutnya adalah buka folder yang sudah kita buat di visual studio code. Ada banyak sekali struktur direktori yang sudah disediakan oleh codeigniter. setiap folder dan file memiliki tujuan dan fungsinya masing masing.
 Misalnya, folder "app" digunakan untuk menyimpan semua file yang terkait dengan aplikasi yang sedang kita buat. kemudian ada folder "public" yang digunakan untuk menyimpan asset yang akan dibuat dan File "public/index.php" adalah file yang akan dijalankan pertama kali ketika aplikasi diakses oleh pengguna. Folder "test" digunakan jika aplikasi akan menjalankan testing. kemudian ada folder vendor yaitu tempat menyimpan dependency dari aplikasi. yang terakhir ada folder writeable dimana codeigniter akan mengisikan secara otomatis (tidak untuk melakukan modifikasi).
+berikut adalah struktur direktori bawaan dari codeigniter :
+  
+![image](https://github.com/Meilyaatffh/Tugas1_PBF_Meilya/assets/134565192/37bbcb91-599f-4862-bedf-09e3c685317c)
+
+### 2. Mengatur Mode Pengembangan
+Secara default, CodeIgniter dijalankan dalam mode produksi. Ini adalah fitur keamanan untuk menjaga situs menjadi lebih aman. disini kita akan melakukan perubahan yang awalnya mode produksi menjadi mode development, yaitu dengan cara Salin atau ganti nama file env menjadi .env
+Batalkan komentar (hapus simbol #) pada baris dengan CI_ENVIRONMENTdi atasnya, dan ubah productionmenjadi development:
+
+
+
 
 
 
