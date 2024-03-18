@@ -163,6 +163,13 @@ CREATE TABLE news (
 
 isikan tabel news dengan data sebagai berikut :
 
+![image](https://github.com/Meilyaatffh/Tugas1_PBF_Meilya/assets/134565192/dad57246-59ae-4c67-868b-62deeb5b72cc)
+
+
+### 8. Menghubungkan ke Basis Data
+
+pada file .env untuk bagian database tidak diberi komentar kemudian ubah datanya menyesuaikan dengan yang ada di database. disini saya melakukan perubahan pada nama database yaitu menjadi ci4tutorial, karena kita menggunakan database ci4tutorial.
+
 
 
 
